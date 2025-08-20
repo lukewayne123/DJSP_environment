@@ -1,0 +1,81 @@
+import os
+import torch
+from params import get_args
+from env.env import JSP_Env
+from model.REINFORCE import REINFORCE
+import time
+from torch.utils.tensorboard import SummaryWriter
+from heuristic import *
+MAX = float(1e6)
+
+def number(file_name):
+    return int(file_name.split('/')[-1][:-4])
+
+def eval_(env, episode, valid_sets=None):
+
+    if args.instance_type == 'FJSP':
+        valid_dir = './datasets/DFJSP/Base_mk04/valid_seed_9569_newjob_Tarr=20_breakdown'
+        if valid_sets is None:
+            valid_sets = ['(15+20)x8']
+
+    else:
+        valid_dir = './datasets/DJSP'
+        if valid_sets is None:
+            valid_sets = ['(10+20)x10_DJSP']
+
+    # for _set in valid_sets:
+    best_tard=1e6
+    best_ep=0
+    for _set in os.listdir(valid_dir):
+        total_tard = 0.
+        for instance in sorted(os.listdir(os.path.join(valid_dir, _set)), key=number):
+
+            file = os.path.join(os.path.join(valid_dir, _set), instance)
+
+            avai_ops = env.load_instance(file)
+
+            while True:
+                data, op_unfinished, job_srpt= env.get_graph_data()
+                action_idx, action_prob = policy(avai_ops, data, op_unfinished, job_srpt, env.jsp_instance.graph.max_process_time, greedy=True)
+                avai_ops, done = env.step(avai_ops[action_idx])
+
+                if done:
+                    ed = time.time()
+                    tard = env.get_tardiness()
+                    total_tard += tard
+                    print('date : {} \t instance : {}\t tard : {}'.format(args.date, file, tard))
+                    break
+                    
+        print('episode : {}\t tard : {}'.format(episode, total_tard / 100))
+        if best_tard > (total_tard/100):
+            best_tard=total_tard/100
+            best_ep=episode
+        with open("./result/{}/valid.txt".format(args.date), "a") as out:
+            out.write('episode : {}\t tard : {}\n'.format(episode, total_tard / 100))
+    with open("./result/{}/valid.txt".format(args.date), "a") as out:
+        out.write('best episode : {}\t tard : {}\n'.format(best_ep, best_tard ))
+
+if __name__ == '__main__':
+    args = get_args()
+    print(args)
+    with open("./result/{}/valid.txt".format(args.date), "a") as out:
+        out.write('{}\n'.format(args))
+    env = JSP_Env(args)
+    policy = REINFORCE(args).to(args.device)
+    os.makedirs('./result/{}/'.format(args.date), exist_ok=True)
+
+    # for episode in os.listdir('./weight/{}/'.format(args.date)):
+    # for episode in os.listdir('../dynamic_machine_breakdown_append/weight/0516_both_bak/')[::-1]:
+    start_time = time.time()
+    for episode in range(90000, 201000, 1000):
+        if episode == 'best':
+            continue
+        print(f'date : {args.date} episode : {episode}')
+        if os.path.exists('./weight/{}/{}'.format(args.date, episode)) == False:
+            break
+        policy.load_state_dict(torch.load('./weight/{}/{}'.format(args.date, episode), map_location=args.device), False)
+        with torch.no_grad():
+            valid_makespan = eval_(env, episode, args.valid_sets)
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print("Took: ", execution_time)

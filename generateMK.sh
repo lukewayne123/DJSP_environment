@@ -1,0 +1,10 @@
+python env/utils/benchmark_generator.py --baseFile MK01 --baseFilePath datasets/base_files/Mk01.fjs
+python env/utils/benchmark_generator.py --baseFile MK02 --baseFilePath datasets/base_files/Mk02.fjs
+python env/utils/benchmark_generator.py --baseFile MK03 --baseFilePath datasets/base_files/Mk03.fjs
+python env/utils/benchmark_generator.py --baseFile MK04 --baseFilePath datasets/base_files/Mk04.fjs
+python env/utils/benchmark_generator.py --baseFile MK05 --baseFilePath datasets/base_files/Mk05.fjs
+python env/utils/benchmark_generator.py --baseFile MK06 --baseFilePath datasets/base_files/Mk06.fjs
+python env/utils/benchmark_generator.py --baseFile MK07 --baseFilePath datasets/base_files/Mk07.fjs
+python env/utils/benchmark_generator.py --baseFile MK08 --baseFilePath datasets/base_files/Mk08.fjs
+python env/utils/benchmark_generator.py --baseFile MK09 --baseFilePath datasets/base_files/Mk09.fjs
+python env/utils/benchmark_generator.py --baseFile MK10 --baseFilePath datasets/base_files/Mk10.fjs
