@@ -1,18 +1,3 @@
-#python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAe_1212_ScNwAwBEDD_tardy_$1 --logU True --test_dir edata >> LAe1212_ScNwAwBEDD_tardy_$1.txt
-#python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAr_1212_ScNwAwBEDD_tardy_$1 --logU True --test_dir rdata >> LAr1212_ScNwAwBEDD_tardy_$1.txt
-#python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAv_1212_ScNwAwBEDD_tardy_$1 --logU True --test_dir vdata >> LAv1212_ScNwAwBEDD_tardy_$1.txt
-#python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAe_1212_ScNwAwBEDD_tardy_$1 --logU True --test_dir edata$2 --DDT $3>> ./debugLog/LAe1212_ScNwAwBEDD_tardy_$1.txt
-#python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAr_1212_ScNwAwBEDD_tardy_$1 --logU True --test_dir rdata$2 --DDT $3>> ./debugLog/LAr1212_ScNwAwBEDD_tardy_$1.txt
-#python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAv_1212_ScNwAwBEDD_tardy_$1 --logU True --test_dir vdata$2 --DDT $3>> ./debugLog/LAv1212_ScNwAwBEDD_tardy_$1.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAe_1212_ScNwAwBEDD_tardy_Mb_DDT3 --logU True --test_dir edataMbreak --DDT 3.0>> ./debugLog/LAe1212_ScNwAwBEDD_tardy_Mb_DDT3.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAr_1212_ScNwAwBEDD_tardy_Mb_DDT3 --logU True --test_dir rdataMbreak --DDT 3.0>> ./debugLog/LAr1212_ScNwAwBEDD_tardy_Mb_DDT3.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAv_1212_ScNwAwBEDD_tardy_Mb_DDT3 --logU True --test_dir vdataMbreak --DDT 3.0>> ./debugLog/LAv1212_ScNwAwBEDD_tardy_Mb_DDT3.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAe_1212_ScNwAwBEDD_tardy_Mb_DDT10 --logU True --test_dir edataMbreak --DDT 10.0>> ./debugLog/LAe1212_ScNwAwBEDD_tardy_Mb_DDT10.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAr_1212_ScNwAwBEDD_tardy_Mb_DDT10 --logU True --test_dir rdataMbreak --DDT 10.0>> ./debugLog/LAr1212_ScNwAwBEDD_tardy_Mb_DDT10.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAv_1212_ScNwAwBEDD_tardy_Mb_DDT10 --logU True --test_dir vdataMbreak --DDT 10.0>> ./debugLog/LAv1212_ScNwAwBEDD_tardy_Mb_DDT10.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAe_1212_ScNwAwBEDD_tardy_Mb_DDT2 --logU True --test_dir edataMbreak --DDT 2.0>> ./debugLog/LAe1212_ScNwAwBEDD_tardy_Mb_DDT2.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAr_1212_ScNwAwBEDD_tardy_Mb_DDT2 --logU True --test_dir rdataMbreak --DDT 2.0>> ./debugLog/LAr1212_ScNwAwBEDD_tardy_Mb_DDT2.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAv_1212_ScNwAwBEDD_tardy_Mb_DDT2 --logU True --test_dir vdataMbreak --DDT 2.0>> ./debugLog/LAv1212_ScNwAwBEDD_tardy_Mb_DDT2.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAe_1212_ScNwAwBEDD_tardy_Mb_DDT2.5 --logU True --test_dir edataMbreak --DDT 2.5>> ./debugLog/LAe1212_ScNwAwBEDD_tardy_Mb_DDT25.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAr_1212_ScNwAwBEDD_tardy_Mb_DDT2.5 --logU True --test_dir rdataMbreak --DDT 2.5>> ./debugLog/LAr1212_ScNwAwBEDD_tardy_Mb_DDT25.txt
-python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date LAv_1212_ScNwAwBEDD_tardy_Mb_DDT2.5 --logU True --test_dir vdataMbreak --DDT 2.5>> ./debugLog/LAv1212_ScNwAwBEDD_tardy_Mb_DDT25.txt
+python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date $1 --logU True --test_dir edata$2 --DDT $3
+python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date $1 --logU True --test_dir rdata$2 --DDT $3
+python ScN-dutilization.py --train_arr True --train_break True --device cuda:1 --date $1 --logU True --test_dir vdata$2 --DDT $3

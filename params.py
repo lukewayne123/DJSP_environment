@@ -52,7 +52,8 @@ def get_args():
     # args for nameing
     parser.add_argument('--date', type=str, default='test_arr_reschedule')
     parser.add_argument('--detail', type=str, default="no")
-    parser.add_argument('--rule', type=str, default='EDD_SPT_rng')
+#parser.add_argument('--rule', type=str, default='EDD_SPT_rng')
+    parser.add_argument('--rule', type=str, default='EDD')
 
     # args for val/test
     parser.add_argument('--valid_sets', type=str, default=None, help="split by ,")

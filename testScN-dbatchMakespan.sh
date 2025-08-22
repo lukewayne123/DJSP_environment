@@ -1,7 +1,3 @@
-#python RS-dutilization.py --delete_node True --train_arr True --train_break True --device cuda:0 --date LAe_1212_RSwAwBEDD_tardy_$1check --logU True --test_dir vdata >> LAe1212_RSwAwBEDD_tardy_$1check.txt
-#python RS-dutilization.py --delete_node True --train_arr True --train_break True --device cuda:0 --date LAe_1212_RSwAwBEDD_tardy_$1 --logU True --test_dir edata >> LAe1212_RSwAwBEDD_tardy_$1.txt
-#python RS-dutilization.py --delete_node True --train_arr True --train_break True --device cuda:0 --date LAr_1212_RSwAwBEDD_tardy_$1 --logU True --test_dir rdata >> LAr1212_RSwAwBEDD_tardy_$1.txt
-#python RS-dutilization.py --delete_node True --train_arr True --train_break True --device cuda:0 --date LAv_1212_RSwAwBEDD_tardy_$1 --logU True --test_dir vdata >> LAv1212_RSwAwBEDD_tardy_$1.txt
-python ScN-dmakespan.py --objective makespan  --train_arr True --train_break True --device cuda:0 --date LAe_ScNwAwB_makespan_$1 --logU True --test_dir edata$2 --DDT $3>> ./debugLog/LAe_ScNwAwB_makespan_$1.txt
-python ScN-dmakespan.py --objective makespan  --train_arr True --train_break True --device cuda:0 --date LAr_ScNwAwB_makespan_$1 --logU True --test_dir rdata$2 --DDT $3>> ./debugLog/LAr_ScNwAwB_makespan_$1.txt
-python ScN-dmakespan.py --objective makespan  --train_arr True --train_break True --device cuda:0 --date LAv_ScNwAwB_makespan_$1 --logU True --test_dir vdata$2 --DDT $3>> ./debugLog/LAv_ScNwAwB_makespan_$1.txt
+python ScN-dmakespan.py --objective makespan  --train_arr True --train_break True --device cuda:0 --date $1 --logU True --test_dir edata$2 --DDT $3
+python ScN-dmakespan.py --objective makespan  --train_arr True --train_break True --device cuda:0 --date $1 --logU True --test_dir rdata$2 --DDT $3
+python ScN-dmakespan.py --objective makespan  --train_arr True --train_break True --device cuda:0 --date $1 --logU True --test_dir vdata$2 --DDT $3
